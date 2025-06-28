@@ -1,11 +1,11 @@
 'use client'
 
-import { AboutUs } from '~/components/sections/home'
+import CustomerTradeDetails from '~/components/sections/home/CustomerTradeDetails'
 
 function HomePage() {
    return (
       <div className="space-y-16 py-16">
-         <AboutUs />
+         <CustomerTradeDetails />
       </div>
    )
 }

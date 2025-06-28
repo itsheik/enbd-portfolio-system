@@ -15,8 +15,8 @@ export const AboutUs = () => {
    const matches = useMediaQuery('(min-width: 47.93em)')
    const btnSize: MantineSize = matches ? 'md' : 'sm'
    const router = useRouter()
-   
-return (
+
+   return (
       <SectionContainer aria-labelledby="about-heading">
          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             {/* Left side - Image */}
