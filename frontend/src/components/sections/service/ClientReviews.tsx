@@ -1,7 +1,10 @@
 import React from 'react'
-import TestimonialComponent from './TestimonialsComponent'
+
 import { TESTIMONIALS } from '@/src/constants/dummyData'
+
 import Pagination from '../../pagination/PaginationCard'
+
+import TestimonialComponent from './TestimonialsComponent'
 
 const ClientReviews = () => {
    return (

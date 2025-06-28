@@ -1,6 +1,8 @@
-import { Storage } from '@/src/utils/images/main-page'
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
+
+import { Storage } from '@/src/utils/images/main-page'
+
 import { Heading, Paragraph } from '../../ui'
 
 const MovingServicesSection = () => {

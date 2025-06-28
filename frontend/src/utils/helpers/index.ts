@@ -6,7 +6,11 @@ import DOMPurify from 'dompurify'
 import { COUNTRY_ALIAS } from '@/src/constants/constants'
 import { useQueryParam } from '@/src/hooks/useQueryParam'
 import { updateQueryParams } from '@/src/hooks/useUpdateQueryParams'
+<<<<<<< HEAD
 import { LoadWineRegionsByAuctionIdData } from '@/src/interface/auction'
+=======
+import { type LoadWineRegionsByAuctionIdData } from '@/src/interface/auction'
+>>>>>>> frontend-dev
 
 export const ApiErrorToast = (error: SerializedError) => {
    if ('data' in error) {
@@ -215,4 +219,20 @@ export const formatDateToDateTime = (isoString: string): string => {
    }
 }
 
+export const getAllFiltersData = () => {
+   const transactionId = useQueryParam('orderId'),
+      securityName = useQueryParam('securityName'),
+      transactionType = useQueryParam('transactionType'),
+      fromDate = useQueryParam('fromDate'),
+      toDate = useQueryParam('toDate')
 
+   return {
+      transactionId,
+      securityName,
+      transactionType,
+      fromDate,
+      toDate,
+   }
+}
+
+export const CLEAR_FILTERS = () => {}

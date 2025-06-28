@@ -1,5 +1,6 @@
+import { type ReactNode } from 'react'
 import { Accordion } from '@mantine/core'
-import { ReactNode } from 'react'
+
 type LayoutProps = {
    data?: any
 }

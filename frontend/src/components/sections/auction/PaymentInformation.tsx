@@ -1,7 +1,9 @@
 import React from 'react'
-import { Heading } from '~/components/ui'
-import { LogoCard } from '~/components/cards/LogoCard'
+
 import { AmericanExpress, Discover, MasterCard } from '@/src/utils/images/main-page'
+
+import { LogoCard } from '~/components/cards/LogoCard'
+import { Heading } from '~/components/ui'
 
 const PaymentInformation = () => {
    return (

@@ -2,6 +2,7 @@
 import { type MantineSize } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import { routes } from '@/src/constants'
 
@@ -9,12 +10,12 @@ import { Heading, MButton, Paragraph } from '../../ui'
 import { SectionContainer } from '../section-container'
 
 import aboutUsImg from '~/assets/images/about-us-image.webp'
-import { useRouter } from 'next/navigation'
 
 export const AboutUs = () => {
    const matches = useMediaQuery('(min-width: 47.93em)')
    const btnSize: MantineSize = matches ? 'md' : 'sm'
    const router = useRouter()
+
    return (
       <SectionContainer aria-labelledby="about-heading">
          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">

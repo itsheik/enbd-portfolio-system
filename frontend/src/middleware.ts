@@ -8,7 +8,7 @@ import { type IUser } from './store/features/auth/authSlice'
 export const config = {
    matcher: [
       // Protected routes
-      '/user/:path*',
+      // '/user/:path*',
 
       // Dynamic routes
       // "/admins/:path*",
@@ -27,7 +27,7 @@ export const config = {
       // "/packages",
 
       // Auth routes
-      '/auth/:path*',
+      // '/auth/:path*',
    ],
 }
 

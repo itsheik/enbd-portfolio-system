@@ -16,13 +16,6 @@ export const routes = {
    account: '/user/account/dashboard/',
    user: {
       dashboard: PAGE_ROUTES.DASHBOARD.USER_DASHBOARD,
-      bidding: PAGE_ROUTES.DASHBOARD.BIDDING,
-      consignment: PAGE_ROUTES.DASHBOARD.CONSIGNMENTS,
-      wishlist: PAGE_ROUTES.DASHBOARD.WISHLIST,
-      invoice: PAGE_ROUTES.DASHBOARD.INVOICE,
-      profile: PAGE_ROUTES.DASHBOARD.PROFILE,
-      payment: PAGE_ROUTES.DASHBOARD.PAYMENT_METHOD,
-      search: PAGE_ROUTES.DASHBOARD.SEARCH_SETTING,
    },
 
    /* ORDER */

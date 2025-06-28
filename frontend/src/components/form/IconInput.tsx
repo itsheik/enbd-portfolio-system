@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { SearchSvg } from '../ui/icons/svg-icons'
 
 export default function IconInput() {

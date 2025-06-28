@@ -1,7 +1,9 @@
 import React from 'react'
-import { Paragraph } from '../../ui'
 import Image from 'next/image'
+
 import { NewportStorage, WineArt } from '@/src/utils/images/main-page'
+
+import { Paragraph } from '../../ui'
 
 const Consignment = () => {
    return (

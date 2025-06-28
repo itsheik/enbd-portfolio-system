@@ -33,6 +33,44 @@ export const UPCOMMING_AUCTIONS = [
    },
 ]
 
+export const CUSTOMER_TRADE_DETAILS_DATA = [
+   {
+      orderRefNo: 'ORD-2025-001',
+      securityName: 'Apple Inc. (AAPL)',
+      transactionType: 'Buy',
+      fromDate: '2025-01-15',
+      toDate: '2025-01-20',
+   },
+   {
+      orderRefNo: 'ORD-2025-002',
+      securityName: 'Microsoft Corporation (MSFT)',
+      transactionType: 'Sell',
+      fromDate: '2025-01-18',
+      toDate: '2025-01-25',
+   },
+   {
+      orderRefNo: 'ORD-2025-003',
+      securityName: 'Tesla Inc. (TSLA)',
+      transactionType: 'Buy',
+      fromDate: '2025-01-20',
+      toDate: '2025-01-22',
+   },
+   {
+      orderRefNo: 'ORD-2025-004',
+      securityName: 'Amazon.com Inc. (AMZN)',
+      transactionType: 'Sell',
+      fromDate: '2025-01-22',
+      toDate: '2025-01-28',
+   },
+   {
+      orderRefNo: 'ORD-2025-005',
+      securityName: 'Google LLC (GOOGL)',
+      transactionType: 'Buy',
+      fromDate: '2025-01-25',
+      toDate: '2025-01-30',
+   },
+]
+
 export const LISTING_TIME = [
    {
       number: '5',

@@ -1,10 +1,12 @@
 'use client'
-import Image from 'next/image'
 import { useState } from 'react'
+import Image from 'next/image'
+
+import IconInput from '../form/IconInput'
 
 import WineBottle from '~/assets/images/wine-bottle.png'
 import { Heading, InternalLink, MAnchor, Paragraph } from '~/components/ui'
-import IconInput from '../form/IconInput'
+
 export const EmailListing = () => {
    const [email, setEmail] = useState('')
 
@@ -14,7 +16,8 @@ export const EmailListing = () => {
       console.log('Email submitted:', email)
       setEmail('')
    }
-   return (
+   
+return (
       <article
          aria-label="recommeauction price list card"
          className="w-full flex items-start flex-col  bg-beige  px-4 py-6 mb-4 rounded-lg"

@@ -4,13 +4,13 @@ import { CiHome, CiLogin, CiLogout } from 'react-icons/ci'
 import { FiMenu, FiShoppingBag } from 'react-icons/fi'
 import { useSelector } from 'react-redux'
 import { Divider } from '@mantine/core'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
 import { routes } from '@/src/constants'
 import { HIDE_LOGIN_BUTTON, HIDE_NAV_ACTIONS, PAGE_ROUTES } from '@/src/constants/page-constants'
 import { useAppDispatch } from '@/src/lib/store'
 import { logoutUser, selectUserSlice } from '@/src/store/features/auth/authSlice'
-import { selectRetailSlice } from '@/src/store/features/retail/retailSlice'
 
 import NavPopover from '../../ui/Popover/NavPopover'
 
@@ -18,6 +18,7 @@ import { SectionContainer } from '~/components/sections'
 import { Logo, MActionIcon, MButton } from '~/components/ui'
 import { INCLUDE_NAV_STYLES } from '~/constants/constants'
 import { cn } from '~/lib'
+import { chartImage } from '~/utils/images'
 
 type MainNavProps = {
    toggleMenuOpen: (value?: SetStateAction<boolean> | undefined) => void
@@ -28,7 +29,6 @@ export const MainNav = ({ toggleMenuOpen }: MainNavProps) => {
    const dispatch = useAppDispatch()
    const { userId, loggingOut } = useSelector(selectUserSlice)
    const router = useRouter()
-   const { retailCart } = useSelector(selectRetailSlice)
 
    const toggleMenu = () => toggleMenuOpen(mO => !mO)
    const toggleMobileMenu = () => toggleMenuOpen(mO => !mO)
@@ -76,7 +76,10 @@ export const MainNav = ({ toggleMenuOpen }: MainNavProps) => {
       <header className={cn('bg-beige py-4 w-full ', customStyles.header)} role="banner">
          <SectionContainer className={cn('w-full flex items-center justify-between', customStyles.container.main)}>
             <div />
-            <Logo aria-label="Home" />
+            {/* <Logo aria-label="Home" /> */}
+            {/* <div>
+               <Image src={chartImage} alt="ENBD Logo" width={100} height={100} />
+            </div> */}
 
             {loggingOut ? (
                <div />
@@ -112,14 +115,6 @@ export const MainNav = ({ toggleMenuOpen }: MainNavProps) => {
                      onClick={() => router.push(routes.cart)}
                   >
                      <FiShoppingBag className="size-5" aria-hidden="true" />
-
-                     {retailCart && retailCart.cartItems?.length ? (
-                        <span className="text-xs absolute top-0 right-0 bg-red-primary text-white rounded-full w-3.5 h-3.5 flex items-center justify-center">
-                           {retailCart.cartItems.length}
-                        </span>
-                     ) : (
-                        ''
-                     )}
                   </MActionIcon>
 
                   <div className="max-[768px]:hidden">

@@ -1,5 +1,6 @@
 'use client'
 import { Tabs } from '@mantine/core'
+
 type TabDataProps = {
    value: string
    name: string
