@@ -5,7 +5,7 @@ export type TransactionState = object
 const initialState: TransactionState = {}
 
 const transactionSlice = createSlice({
-   name: 'transaction',
+   name: 'transactions',
    initialState,
    reducers: {
       setTransactionSlice: (state, action: PayloadAction<Partial<TransactionState>>) => {
@@ -18,6 +18,6 @@ const transactionSlice = createSlice({
 })
 
 export const { setTransactionSlice } = transactionSlice.actions
-export const selectTransactionSlice = (state: { user: TransactionState }) => state.user
+export const selectTransactionSlice = (state: { transactions: TransactionState }) => state.transactions
 
 export default transactionSlice.reducer

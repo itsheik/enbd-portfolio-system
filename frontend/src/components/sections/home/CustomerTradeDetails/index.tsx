@@ -1,5 +1,5 @@
 'use client'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { debounce } from 'lodash'
 
 import { CUSTOMER_TRADE_DETAILS_DATA } from '@/src/constants/dummyData'
@@ -19,6 +19,7 @@ type CustomerTradeDetailsData = (typeof CUSTOMER_TRADE_DETAILS_DATA)[0]
 
 const CustomerTradeDetails = (props: Props) => {
    const { orderRefNo, securityName, transactionType, fromDate, toDate } = getAllFiltersData()
+   const [filteredData, setFilteredData] = useState(CUSTOMER_TRADE_DETAILS_DATA)
 
    const debouncedUpdateSearchQuery = useCallback(
       debounce((key: string, value: string | null) => {
@@ -48,6 +49,36 @@ const CustomerTradeDetails = (props: Props) => {
       fromDate,
       toDate,
    }).some(value => value !== '')
+
+   useEffect(() => {
+      if (orderRefNo) {
+         setFilteredData(
+            CUSTOMER_TRADE_DETAILS_DATA.filter(item =>
+               item.orderRefNo.toLowerCase().includes(orderRefNo.toLowerCase()),
+            ),
+         )
+      } else if (securityName) {
+         setFilteredData(
+            CUSTOMER_TRADE_DETAILS_DATA.filter(item =>
+               item.securityName.toLowerCase().includes(securityName.toLowerCase()),
+            ),
+         )
+      } else if (transactionType) {
+         setFilteredData(
+            CUSTOMER_TRADE_DETAILS_DATA.filter(item =>
+               item.transactionType.toLowerCase().includes(transactionType.toLowerCase()),
+            ),
+         )
+      } else if (fromDate) {
+         setFilteredData(CUSTOMER_TRADE_DETAILS_DATA.filter(item => item.fromDate.includes(fromDate)))
+      } else if (toDate) {
+         setFilteredData(CUSTOMER_TRADE_DETAILS_DATA.filter(item => item.toDate.includes(toDate)))
+      } else {
+         setFilteredData(CUSTOMER_TRADE_DETAILS_DATA)
+      }
+   }, [orderRefNo, securityName, transactionType, fromDate, toDate])
+
+   console.log('filteredData', filteredData)
 
    const columns = [
       {
@@ -180,8 +211,7 @@ const CustomerTradeDetails = (props: Props) => {
                   <div className="flex items-end">
                      <div className="bg-white px-3 py-2 rounded border">
                         <span className="text-sm text-gray-600">
-                           {/* Showing {filteredData.length} of {CUSTOMER_TRADE_DETAILS_DATA.length} results */}3 of{' '}
-                           {CUSTOMER_TRADE_DETAILS_DATA.length} results
+                           Showing {filteredData.length} of {CUSTOMER_TRADE_DETAILS_DATA.length} results
                         </span>
                      </div>
                   </div>
@@ -191,7 +221,7 @@ const CustomerTradeDetails = (props: Props) => {
             <div className="relative h-full w-full aspect-video md:aspect-square md:h-[500px] rounded-md overflow-hidden">
                <GlobalTable<CustomerTradeDetailsData>
                   columns={columns}
-                  data={CUSTOMER_TRADE_DETAILS_DATA}
+                  data={filteredData}
                   styles={{
                      thStyle: 'py-2 px-3 text-center',
                      tdStyle: 'py-2 px-3',
