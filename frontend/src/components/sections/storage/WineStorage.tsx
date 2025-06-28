@@ -15,7 +15,7 @@ const WineStorage = () => {
             </Heading>
             <Paragraph className="font-light md:font-light text-base my-4">
                As one of the largest purveyors of fine and rare wine in Orange County, we know how important wine
-               storage is to our customers. Spectrum Wine operates wine storage facilities in Santa Ana and Newport
+               storage is to our customers. ENBD Portfolio operates wine storage facilities in Santa Ana and Newport
                Beach. At these locations we offer locker sizes that range from smaller 6 case lockers up to luxury 1000+
                case walk-in storage units. We also offer commercial refrigerated pallet storage at our Santa Ana
                facility on a short or long-term basis.

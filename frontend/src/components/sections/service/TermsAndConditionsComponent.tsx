@@ -9,7 +9,7 @@ const TermsAndConditionsComponent = () => {
       <section>
          {' '}
          <Heading order={2} className="text-red-secondary font-normal text-3xl">
-            Spectrum Wine Auctions
+            ENBD Portfolio Auctions
             <br />
             The May 2025 Auction: Part 4{' '}
          </Heading>

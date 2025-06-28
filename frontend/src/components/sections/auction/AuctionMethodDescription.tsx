@@ -19,7 +19,7 @@ export const AuctionMethodDescription = () => {
                   rigorous owner interview as well as a verification of storage and transport process. No collection is
                   approved for our auctions out of hand; only collections that are provably well-stored and properly
                   transported are accepted as eligible for auction sale. Collections that do not meet these standards
-                  are never accepted by Spectrum Wine for sale.
+                  are never accepted by ENBD Portfolio for sale.
                </Paragraph>
             </div>
             <div>

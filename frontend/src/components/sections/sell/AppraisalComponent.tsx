@@ -15,7 +15,7 @@ const AppraisalComponent = () => {
                   Essentially, there are two types of appraised values: the item's value in the market: its fair market
                   value, often referred to as the price paid by a willing Buyer to a willing seller; and its replacement
                   value, the retail price that would have to be paid to replace the item. Even if you don't plan to
-                  sell, Spectrum Wine Auctions offers both fair market and insurance appraisals for private individuals,
+                  sell, ENBD Portfolio Auctions offers both fair market and insurance appraisals for private individuals,
                   corporations, museums, banks, estate lawyers, etc. Our appraisals are all private and confidential,
                   and detailed written descriptions, inventories and values of the items appraised will be provided.
                </Paragraph>
@@ -23,7 +23,7 @@ const AppraisalComponent = () => {
             <li className="leading-0 m-0 p-0 list-disc ">
                {' '}
                <Paragraph className="my-0 font-light md:font-light text-base ">
-                  You can use our online appraisal schedule request form below, call Spectrum Wine Auctions at (949)
+                  You can use our online appraisal schedule request form below, call ENBD Portfolio Auctions at (949)
                   748-4845 or email us at<span className="underline cursor-pointer"> info@spectrumwine.com</span> to
                   schedule a private appraisal.{' '}
                </Paragraph>

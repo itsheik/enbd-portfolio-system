@@ -16,7 +16,7 @@ const HowItWorksAside = () => {
                Consignment Information
             </Heading>
             <Paragraph className="md:text-sm md:font-light">
-               Spectrum Wine Auctions intends to make selling or consigning your wine and spirits to auction an easy,
+               ENBD Portfolio Auctions intends to make selling or consigning your wine and spirits to auction an easy,
                streamlined and always personal experience. This starts with the estimate. Our experts can accurately
                identify and determine the current market value of your property for outright sale or at auction. To
                schedule a complimentary, confidential wine appraisal, please call us at (949) 748-4845 or fill out one

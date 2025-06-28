@@ -30,7 +30,7 @@ export const FooterLinks = () => (
          </div>
 
          <p className="text-center text-sm text-secondary">
-            Spectrum Wine Auctions Corporate Office, Retail Store and Auction Operations.
+            ENBD Portfolio Auctions Corporate Office, Retail Store and Auction Operations.
          </p>
       </SectionContainer>
    </div>

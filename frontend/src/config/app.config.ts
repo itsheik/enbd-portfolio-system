@@ -6,9 +6,9 @@ export const appConfig: ConfigProps = {
    domainName: 'spectrumwine.com',
    author: 'Farhan Ali',
    theme: 'light',
-   appName: 'Spectrum Wine - Fine and Rare Vintage Wine and Spirits Auctions, Retail and Refrigerated Storage',
-   appNameShort: 'Spectrum Wine',
-   appDescription: `Spectrum Wine offers weekly online wine and spirits auctions through its state-of-the-art website and industry leading mobile bidding apps`,
+   appName: 'ENBD Portfolio - Fine and Rare Vintage Wine and Spirits Auctions, Retail and Refrigerated Storage',
+   appNameShort: 'ENBD Portfolio',
+   appDescription: `ENBD Portfolio offers weekly online wine and spirits auctions through its state-of-the-art website and industry leading mobile bidding apps`,
 
    contactNo: '+1.949.748.4845',
    mainTel: '+1 (949) 748-4845',
