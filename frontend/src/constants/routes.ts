@@ -19,7 +19,7 @@ export const routes = {
    },
 
    /* ORDER */
-   order: '/order/',
+   order: '/orders/',
    trackDetails: (orderId: string) => `/order/track/${orderId}`,
 
    /* AUCTIONS */

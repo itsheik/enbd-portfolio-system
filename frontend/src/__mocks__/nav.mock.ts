@@ -7,7 +7,7 @@ export const navItems = [
       id: generateUUID(),
       label: 'Orders',
       hasDropdown: true,
-      items: [{ id: generateUUID(), label: 'dashboard', href: routes.order }],
+      items: [{ id: generateUUID(), label: 'Order Entry', href: routes.order }],
    },
 ]
 
