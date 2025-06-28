@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { debounce } from 'lodash'
 
 import { CUSTOMER_TRADE_DETAILS_DATA } from '@/src/constants/dummyData'
+import { useTransactionData } from '@/src/hooks/transaction'
 import { updateQueryParams } from '@/src/hooks/useUpdateQueryParams'
 import { getAllFiltersData } from '@/src/utils/helpers'
 
@@ -18,6 +19,7 @@ type Props = object
 type CustomerTradeDetailsData = (typeof CUSTOMER_TRADE_DETAILS_DATA)[0]
 
 const CustomerTradeDetails = (props: Props) => {
+   const { transactionData, isLoading } = useTransactionData()
    const { orderRefNo, securityName, transactionType, fromDate, toDate } = getAllFiltersData()
    const [filteredData, setFilteredData] = useState(CUSTOMER_TRADE_DETAILS_DATA)
 

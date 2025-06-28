@@ -1,10 +1,14 @@
 import { type ApiRequestParams, type ApiResponse } from '..'
 
 export interface TransactionData {
-   userid: number
-   username: string
-   token: string
+   orderRefNo: string
+   securityName: string
+   transactionType: string
+   fromDate: string
+   toDate: string
+   transactionDate: string
+   transactionAmount: number
 }
 
-export type TransactionDataReponse = ApiResponse<TransactionData>
+export type TransactionDataReponse = ApiResponse<TransactionData[]>
 export type TransactionDataRequest = ApiRequestParams

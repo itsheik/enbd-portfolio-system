@@ -1,8 +1,14 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-export type TransactionState = object
+import { type TransactionData } from '@/src/interface/transaction'
 
-const initialState: TransactionState = {}
+export type TransactionState = {
+   transactionData: TransactionData[] | null
+}
+
+const initialState: TransactionState = {
+   transactionData: null,
+}
 
 const transactionSlice = createSlice({
    name: 'transactions',
