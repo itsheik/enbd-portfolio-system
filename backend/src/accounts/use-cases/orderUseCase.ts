@@ -5,6 +5,7 @@ import prisma from "../../lib/prisma";
 import { ServerError } from "../../lib/ServerError";
 import Decimal from "decimal.js";
 import { AccountDetail } from "@prisma/client";
+import cache from "../../lib/cache";
 
 type Input = {
   userId: number;
@@ -124,6 +125,8 @@ export class OrderUseCase extends UseCase<Input, Output> {
         userLoginDetailId: input.userId,
       },
     });
+
+    await cache.deleteValue(`account:${input.userId}`);
 
     if (!account) {
       throw ServerError.notFound("Account not found");
