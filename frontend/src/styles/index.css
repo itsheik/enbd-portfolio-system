@@ -1,0 +1,95 @@
+/** @format */
+@layer theme, base, mantine, components, utilities;
+
+@import 'tailwindcss';
+
+@import '@mantine/core/styles.layer.css';
+@import '@mantine/carousel/styles.css';
+
+/*---break--- */
+
+@theme inline {
+   --font-gilda-display: var(--font-gilda-display);
+   --font-inter: var(--font-inter);
+   --font-podkova: var(--font-podkova);
+}
+
+@theme {
+   --spacing-8xl: 93.75rem;
+
+   --color-ring: oklch(0.708 0 0);
+
+   --color-secondary: oklch(0.76 0.1538 72.38);
+   --color-primary: oklch(0.21 0.0665 8.63);
+
+   --color-foreground: oklch(0 0 0);
+   --color-background: oklch(0.99 0.0098 87.47);
+
+   --color-beige: oklch(0.96 0.0188 83.06);
+   --color-muted: oklch(0.61 0 0);
+
+   --color-white-secondary: #f7f7f7;
+   --color-red-heavy: #320814;
+   --color-red-primary: #360211;
+   --color-red-secondary: #530000;
+   --color-red-muted: #5300000a;
+   --color-b-red-secondary: #b81e1e;
+   --color-c-red-primary: #310813;
+
+   --color-b-white-secondary: #828282;
+   --color-b-white-primary: #8282826b;
+   --color-success-primary: #48a716;
+   --color-success-secondary: #70e530;
+
+   --color-error-primary: #dd1f26;
+   --color-error-secondary: #b81e1e;
+
+   /* TABLE STYLES */
+   --color-table-head: #ec9f23;
+   --color-table-head-muted: #ec9f23ab;
+   --color-table-body-primary: #f8f1e4;
+   --color-table-body-secondary: #FFF7E5;
+
+   /* Bos Shadows */
+   --shadow-white-primary: 0px 4px 4px 0px #00000040;
+   --shadow-white-secondary: 1px 2px 2px -1px #00000040;
+}
+
+/*---break--- */
+
+@layer base {
+   * {
+      @apply outline-ring/50;
+   }
+
+   *,
+   ::after,
+   ::before,
+   ::backdrop,
+   ::file-selector-button {
+      border-color: var(--color-gray-200, currentColor);
+   }
+   body {
+      @apply bg-background text-foreground;
+   }
+}
+
+@layer utilities {
+   .gradient-primary {
+      background-image: linear-gradient(180deg, rgba(54, 2, 17, 0.78) 0%, rgba(77, 2, 22, 0.78) 100%);
+
+      color: white;
+   }
+   .animate-spin-slow {
+      animation: spin 2.5s linear infinite;
+   }
+
+   /* width */
+   .w-8xl {
+      width: 93.75rem; /* = 1500px */
+   }
+
+   .w-auction-page {
+      width: 55rem;
+   }
+}
