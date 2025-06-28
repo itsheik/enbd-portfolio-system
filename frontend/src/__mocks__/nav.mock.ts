@@ -9,8 +9,6 @@ export const navItems = [
       hasDropdown: true,
       items: [{ id: generateUUID(), label: 'dashboard', href: routes.order }],
    },
-   { id: generateUUID(), label: 'About', href: routes.about, hasDropdown: false },
-   { id: generateUUID(), label: 'Contact', href: routes.contact, hasDropdown: false },
 ]
 
 export type NavItem = {
