@@ -49,8 +49,8 @@ model OrderDetail {
   securityDetailId Int
   orderRefNo       String?
   orderStatus      String?
-  transactionType  String?
-  orderValue       String?
+  transactionType  String
+  orderValue       Int
   createdOn        DateTime?
   createdById      Int
 
@@ -66,7 +66,7 @@ model AccountDetail {
   userLoginDetailId Int
   credit            Int?
   debit             Int?
-  runningBalance    Int?      @default(10000)
+  runningBalance    Int       @default(10000)
   orderDetailId     Int
   createdOn         DateTime?
   createdById       Int

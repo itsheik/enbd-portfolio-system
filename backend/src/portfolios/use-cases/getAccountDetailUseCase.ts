@@ -2,17 +2,17 @@ import { AccountDetail, OrderDetail, UserLoginDetail } from "@prisma/client";
 import { UseCase } from "../../lib/UseCase";
 import { z } from "zod";
 import prisma from "../../lib/prisma";
-import { UserActions } from "../../lib/types";
+import { ServerError } from "../../lib/ServerError";
 
 type Input = {
   userId: number;
 };
 
 type Output = {
-  account: AccountDetail & { userLoginDetail: UserLoginDetail };
+  account: (AccountDetail & { userLoginDetail: UserLoginDetail }) | null;
 };
 
-export class GetSummaryUseCase extends UseCase<Input, Output> {
+export class GetAccountDetailUseCase extends UseCase<Input, Output> {
   inputSchema = z.object({
     userId: z.number(),
   });
@@ -24,14 +24,14 @@ export class GetSummaryUseCase extends UseCase<Input, Output> {
       where: {
         userLoginDetailId: input.userId,
       },
-    });
-
-    await prisma.auditAction.create({
-      data: {
-        userLoginDetailId: input.userId,
-        userAction: UserActions.SearchSummary,
+      include: {
+        userLoginDetail: true,
       },
     });
+
+    if (!account) {
+      throw ServerError.notFound("Account not found");
+    }
 
     return {
       account,
