@@ -44,7 +44,7 @@ export default function RootLayout({
                      <div className="flex flex-col min-h-dvh">
                         <Header />
                         <main className="flex-1">{children}</main>
-                        <Footer />
+                        {/* <Footer /> */}
                      </div>
                   </RootApiCalls>
                </RootProviders>
