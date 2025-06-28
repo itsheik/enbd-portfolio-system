@@ -46,21 +46,6 @@ const CustomerTradeDetails = (props: Props) => {
       return types.map(type => ({ label: type, value: type }))
    }, [])
 
-   const debouncedSetFilter = useCallback(
-      debounce((key: keyof FilterState, value: string) => {
-         setFilters(prev => ({ ...prev, [key]: value }))
-      }, 300),
-      [],
-   )
-
-   const handleFilterChange = (key: keyof FilterState, value: string) => {
-      if (key === 'orderRefNo' || key === 'securityName') {
-         debouncedSetFilter(key, value)
-      } else {
-         setFilters(prev => ({ ...prev, [key]: value }))
-      }
-   }
-
    const clearFilters = () => {
       setFilters({
          orderRefNo: '',
