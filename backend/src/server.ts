@@ -2,6 +2,7 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import { OrdersController } from "./accounts/orders.controller";
 import { ServerError } from "./lib/ServerError";
+import {AuditActionsController} from "./auditActions/auditActions.controller";
 
 class Server {
   private app: Express;
@@ -29,7 +30,7 @@ class Server {
 
   private setupRoutes() {
     new OrdersController().initializeRoutes(this.app);
-    new (require("./auditActions/auditActions.controller").AdutActionsController)().initializeRoutes(this.app);
+    new (require("./auditActions/auditActions.controller").AuditActionsController)().initializeRoutes(this.app);
   }
 
   private setupGlobalErrorHandler() {
