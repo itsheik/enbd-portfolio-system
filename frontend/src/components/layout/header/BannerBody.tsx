@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 
 import { MCarousel, type MCarouselProps, MCarouselSlide } from '~/components/ui'
 import { INCLUDE_NAV_STYLES } from '~/constants/constants'
-import { wineCarouselProps } from '~/features/wine'
 import { cn } from '~/lib'
 import { mainPageWineGlass } from '~/utils/images/main-page'
 
@@ -19,7 +18,6 @@ const BannerBody = (props: Props) => {
    if (!INCLUDE_NAV_STYLES.includes(pathname)) return <></>
 
    const carouselStyle: MCarouselProps = {
-      ...wineCarouselProps,
       orientation: 'vertical',
       height: matches ? 650 : '100%',
       autoPlay: false,

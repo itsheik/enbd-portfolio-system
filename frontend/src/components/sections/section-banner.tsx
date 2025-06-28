@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 import Image from 'next/image'
 
 import { useIsPathSegmentPresent } from '@/src/hooks/useIsPathSegmentPresent'
-import { selectAuctionSlice } from '@/src/store/features/auction/auctionSlice'
 
+// import { selectAuctionSlice } from '@/src/store/features/auction/auctionSlice'
 import { Heading, Paragraph } from '../ui'
 
 import { SectionContainer } from './section-container'
@@ -23,7 +23,7 @@ export const SectionBanner: FC<SectionBannerProps> = ({ title, text, buttonLabel
    const isRetail = useIsPathSegmentPresent('retail')
    const isAuth = useIsPathSegmentPresent('auth')
 
-   const { auctionBidSummaryByCustomer } = useSelector(selectAuctionSlice)
+   // const { auctionBidSummaryByCustomer } = useSelector(selectAuctionSlice)
 
    return (
       <header role="banner" className="min-h-80 py-4 relative bg-primary flex items-center justify-center">
@@ -42,15 +42,15 @@ export const SectionBanner: FC<SectionBannerProps> = ({ title, text, buttonLabel
                   <div className="absolute inset-0 left-1/2 transform -translate-x-1/2 -translate-y-1/5 flex gap-4  bg-red-heavy w-max h-max px-8 py-2 rounded-[10px]">
                      <div className="flex items-center gap-2 rounded">
                         <div className="w-2.5 h-2.5 rounded-full bg-success-secondary"></div>
-                        <Paragraph className="text-success-secondary ">
+                        {/* <Paragraph className="text-success-secondary ">
                            Winning: ${auctionBidSummaryByCustomer?.winning}/{auctionBidSummaryByCustomer?.winningCount}
-                        </Paragraph>
+                        </Paragraph> */}
                      </div>
                      <div className="flex items-center gap-2 rounded">
                         <div className="w-2.5 h-2.5 rounded-full bg-error-primary"></div>
-                        <Paragraph className="text-error-primary  ">
+                        {/* <Paragraph className="text-error-primary  ">
                            Out Bid: {auctionBidSummaryByCustomer?.losing}/{auctionBidSummaryByCustomer?.losingCount}
-                        </Paragraph>
+                        </Paragraph> */}
                      </div>
                   </div>
                ) : null}
