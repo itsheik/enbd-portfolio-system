@@ -43,7 +43,6 @@ export class OrderUseCase extends UseCase<Input, Output> {
         data: {
           transactionType: input.transactionType,
           orderValue: amount,
-          securityDetailId: input.userId,
           createdById: input.userId,
         },
       });
@@ -58,12 +57,6 @@ export class OrderUseCase extends UseCase<Input, Output> {
           },
         },
       });
-    });
-
-    await prisma.accountDetail.findFirst({
-      where: {
-        userLoginDetailId: input.userId,
-      },
     });
 
     await prisma.auditAction.create({
@@ -86,7 +79,6 @@ export class OrderUseCase extends UseCase<Input, Output> {
         data: {
           transactionType: input.transactionType,
           orderValue: amount,
-          securityDetailId: input.userId,
           createdById: input.userId,
         },
       });
@@ -101,12 +93,6 @@ export class OrderUseCase extends UseCase<Input, Output> {
           },
         },
       });
-    });
-
-    await prisma.accountDetail.findFirst({
-      where: {
-        userLoginDetailId: input.userId,
-      },
     });
 
     await prisma.auditAction.create({

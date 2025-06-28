@@ -46,7 +46,7 @@ model UserLoginDetail {
 
 model OrderDetail {
   id               Int       @id @default(autoincrement())
-  securityDetailId Int
+  securityDetailId Int?
   orderRefNo       String?
   orderStatus      String?
   transactionType  String
@@ -54,7 +54,7 @@ model OrderDetail {
   createdOn        DateTime?
   createdById      Int
 
-  securityDetail SecurityDetail  @relation(fields: [securityDetailId], references: [id])
+  securityDetail SecurityDetail? @relation(fields: [securityDetailId], references: [id])
   createdBy      UserLoginDetail @relation("CreatedOrders", fields: [createdById], references: [id])
   accounts       AccountDetail[]
 
@@ -67,13 +67,14 @@ model AccountDetail {
   credit            Int?
   debit             Int?
   runningBalance    Int       @default(10000)
-  orderDetailId     Int
   createdOn         DateTime?
   createdById       Int
 
   userLoginDetail UserLoginDetail @relation("AccountUser", fields: [userLoginDetailId], references: [id])
-  orderDetail     OrderDetail     @relation(fields: [orderDetailId], references: [id])
-  createdBy       UserLoginDetail @relation("AccountCreatedBy", fields: [createdById], references: [id])
+
+  createdBy     UserLoginDetail @relation("AccountCreatedBy", fields: [createdById], references: [id])
+  OrderDetail   OrderDetail?    @relation(fields: [orderDetailId], references: [id])
+  orderDetailId Int?
 
   @@map("ACCOUNT_DETAIL")
 }

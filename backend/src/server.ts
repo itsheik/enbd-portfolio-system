@@ -26,6 +26,11 @@ class Server {
   private setupMiddlewares() {
     this.app.use(express.json());
     this.app.use(cors());
+
+    this.app.use((req, res, next) => {
+      res.locals.user = { id: 1 };
+      next();
+    });
   }
 
   private setupRoutes() {
