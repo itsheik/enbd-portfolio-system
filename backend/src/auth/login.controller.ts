@@ -14,8 +14,8 @@ export class LoginController implements Controller {
     initializeRoutes(app: Express): void {
         app.post("/login", async (req, res, next) => {
             try {
-                const { email, password } = req.body;
-                const result = await this.loginUseCase.execute(email, password);
+                const { email } = req.body;
+                const result = await this.loginUseCase.execute(email);
                 res.status(200).json(result);
             } catch (error) {
                next(error)

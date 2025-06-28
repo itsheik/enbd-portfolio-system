@@ -1,9 +1,7 @@
 import prisma from "../../lib/prisma";
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 type Input = {
     email: string;
-    password: string;
 }
 type Output = {
     user: any;
@@ -11,7 +9,7 @@ type Output = {
 }
 export class LoginUseCase {
 
-    async execute(input: Input, password: any): Promise<Output> {
+    async execute(input: Input): Promise<Output> {
         // Find user by email
         const user = await prisma.userLoginDetail.findFirst({where: {email: input.email}});
         if (!user) {
