@@ -1,0 +1,6 @@
+[
+    { "id": "f1", "name": "Global Equity",      "price": 100 },
+    { "id": "f2", "name": "Emerging Markets",   "price": 75 },
+    { "id": "f3", "name": "US Treasury Bond",   "price": 50 }
+  ]
+  
