@@ -68,7 +68,7 @@ const UpcommingAuctionSection = () => {
                               <Paragraph>*All dates and times are in PT</Paragraph>
                            </td>
                            <td className="py-4 px-6 w-1/4">
-                              <button className="block underline cursor-pointer">Spectrum Wine Auctions</button>
+                              <button className="block underline cursor-pointer">ENBD Portfolio Auctions</button>
                               {item.venueName}
                               <br />
                               {item?.address2 + ', ' + item?.city + ', ' + item.state + ', ' + item.zip}

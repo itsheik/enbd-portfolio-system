@@ -12,11 +12,11 @@ const Consignment = () => {
          <ul className="pl-5 my-5">
             <li className="leading-0 m-0 p-0 list-disc ">
                <Paragraph className="my-0 font-light md:font-light text-base ">
-                  To get started on the exciting and rewarding path of consigning with Spectrum Wine Auctions, simply
+                  To get started on the exciting and rewarding path of consigning with ENBD Portfolio Auctions, simply
                   fill in the following Consignment Form with your consignment information. Upon completion of your
-                  form, it will be e-mailed to the professionals at Spectrum Wine Auctions, at which time we will be
+                  form, it will be e-mailed to the professionals at ENBD Portfolio Auctions, at which time we will be
                   able to start working for you! Should you have any questions about completing this form, the items
-                  that you have, and/or the Spectrum Wine Auctions process, do not hesitate to contact us at (949)
+                  that you have, and/or the ENBD Portfolio Auctions process, do not hesitate to contact us at (949)
                   748-4845 or via email info@spectrumwine.com.{' '}
                </Paragraph>
             </li>

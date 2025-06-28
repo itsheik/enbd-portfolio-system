@@ -6,7 +6,7 @@ const HowItWorksSection = () => {
       <section className="w-full flex flex-col gap-4">
          <div className="w-full bg-beige rounded-lg p-4">
             <Heading order={2} className="text-red-secondary font-normal text-3xl">
-               Spectrum Wine AuctionsThe May 2025 Auction: Part 4{' '}
+               ENBD Portfolio AuctionsThe May 2025 Auction: Part 4{' '}
             </Heading>
             <ul className="list-disc ml-5">
                <li>
@@ -17,7 +17,7 @@ const HowItWorksSection = () => {
                </li>
                <li>
                   <Paragraph className="font-light md:font-light text-base my-0.5">
-                     Your account manager, a Spectrum Wine Specialist, will prepare an appraisal of your wine collection
+                     Your account manager, a ENBD Portfolio Specialist, will prepare an appraisal of your wine collection
                      using real-time auction and retail sales data. Along with the appraisal we will propose and discuss
                      terms along with any logistics required for your consignment or purchase. Everything is up-front
                      and transparent; we never charge hidden fees.
@@ -32,7 +32,7 @@ const HowItWorksSection = () => {
             <ul className="list-disc ml-5">
                <li>
                   <Paragraph className="font-light md:font-light text-base my-0.5">
-                     Spectrum Wine Auctions will arrange all the logistics to safely transport your collection from its
+                     ENBD Portfolio Auctions will arrange all the logistics to safely transport your collection from its
                      current location to our state-of-the-art temperature and humidity-controlled warehouse in Santa
                      Ana, CA. Our warehouse is monitored and controlled 24/7 by temperature and humidity sensors and is
                      monitored 24/7 by by a professional alarm service.

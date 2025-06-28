@@ -13,7 +13,7 @@ const ContactPage = () => {
             <div className="grid md:grid-cols-2 shadow-md">
                <div className="bg-red-secondary text-white size-full rounded-sm p-8 space-y-8">
                   <Heading order={3} className="text-2xl">
-                     Spectrum Wine Auctions Corporate Office, Storage Facility, Retail Store and Auction Operations
+                     ENBD Portfolio Auctions Corporate Office, Storage Facility, Retail Store and Auction Operations
                   </Heading>
 
                   <div className="space-y-1">
@@ -41,7 +41,7 @@ const ContactPage = () => {
                   </div>
 
                   <Heading order={4} className="text-xl font-inter font-normal">
-                     Spectrum Wine Newport Beach Storage Facility
+                     ENBD Portfolio Newport Beach Storage Facility
                   </Heading>
 
                   <div className="space-y-1">
@@ -64,7 +64,7 @@ const ContactPage = () => {
                   </div>
 
                   <Heading order={4} className="text-xl font-inter font-normal">
-                     Spectrum Wine Auctions Hong Kong Office
+                     ENBD Portfolio Auctions Hong Kong Office
                   </Heading>
 
                   <div className="space-y-1">

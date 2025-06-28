@@ -91,5 +91,5 @@ export const jsonLd: WithContext<SoftwareApplication> = {
       'Complimentary wine appraisals and pricing estimates',
       'Industry-leading mobile bidding apps',
    ],
-   applicationSuite: 'Spectrum Wine Auction Platform',
+   applicationSuite: 'ENBD Portfolio Auction Platform',
 }
