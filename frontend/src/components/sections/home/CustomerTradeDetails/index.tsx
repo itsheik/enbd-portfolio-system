@@ -1,9 +1,10 @@
 'use client'
-import React, { useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo } from 'react'
 import { debounce } from 'lodash'
 
 import { CUSTOMER_TRADE_DETAILS_DATA } from '@/src/constants/dummyData'
 import { updateQueryParams } from '@/src/hooks/useUpdateQueryParams'
+import { getAllFiltersData } from '@/src/utils/helpers'
 
 import Dropdown from '../../../form/Dropdown'
 import GlobalHeading from '../../../ui/Headings/GlobalHeading'
@@ -16,22 +17,8 @@ type Props = object
 
 type CustomerTradeDetailsData = (typeof CUSTOMER_TRADE_DETAILS_DATA)[0]
 
-interface FilterState {
-   orderRefNo: string
-   securityName: string
-   transactionType: string
-   fromDate: string
-   toDate: string
-}
-
 const CustomerTradeDetails = (props: Props) => {
-   const [filters, setFilters] = useState<FilterState>({
-      orderRefNo: '',
-      securityName: '',
-      transactionType: '',
-      fromDate: '',
-      toDate: '',
-   })
+   const { orderRefNo, securityName, transactionType, fromDate, toDate } = getAllFiltersData()
 
    const debouncedUpdateSearchQuery = useCallback(
       debounce((key: string, value: string | null) => {
@@ -47,21 +34,20 @@ const CustomerTradeDetails = (props: Props) => {
    }, [])
 
    const clearFilters = () => {
-      setFilters({
-         orderRefNo: '',
-         securityName: '',
-         transactionType: '',
-         fromDate: '',
-         toDate: '',
-      })
-      debouncedUpdateSearchQuery('orderRefNo', '')
-      debouncedUpdateSearchQuery('securityName', '')
-      debouncedUpdateSearchQuery('transactionType', '')
-      debouncedUpdateSearchQuery('fromDate', '')
-      debouncedUpdateSearchQuery('toDate', '')
+      debouncedUpdateSearchQuery('orderRefNo', null)
+      debouncedUpdateSearchQuery('securityName', null)
+      debouncedUpdateSearchQuery('transactionType', null)
+      debouncedUpdateSearchQuery('fromDate', null)
+      debouncedUpdateSearchQuery('toDate', null)
    }
 
-   const hasActiveFilters = Object.values(filters).some(value => value !== '')
+   const hasActiveFilters = Object.values({
+      orderRefNo,
+      securityName,
+      transactionType,
+      fromDate,
+      toDate,
+   }).some(value => value !== '')
 
    const columns = [
       {
@@ -127,7 +113,7 @@ const CustomerTradeDetails = (props: Props) => {
                         placeholder="Search by order ref..."
                         className="bg-white"
                         leftSection={<SearchSvg className="text-red-secondary" />}
-                        defaultValue={filters.orderRefNo}
+                        defaultValue={orderRefNo || ''}
                         onChange={value => {
                            debouncedUpdateSearchQuery('orderRefNo', value)
                         }}
@@ -142,7 +128,7 @@ const CustomerTradeDetails = (props: Props) => {
                         placeholder="Search by security name..."
                         className="bg-white"
                         leftSection={<SearchSvg className="text-red-secondary" />}
-                        defaultValue={filters.securityName}
+                        defaultValue={securityName || ''}
                         onChange={value => {
                            debouncedUpdateSearchQuery('securityName', value)
                         }}
@@ -155,7 +141,7 @@ const CustomerTradeDetails = (props: Props) => {
                      <Dropdown
                         name="transactionType"
                         options={transactionTypes}
-                        value={filters.transactionType}
+                        value={transactionType || ''}
                         onChange={value => {
                            debouncedUpdateSearchQuery('transactionType', value)
                         }}
@@ -169,7 +155,7 @@ const CustomerTradeDetails = (props: Props) => {
                         size="sm"
                         placeholder="Select from date"
                         className="bg-white"
-                        defaultValue={filters.fromDate}
+                        defaultValue={fromDate || ''}
                         onChange={value => {
                            debouncedUpdateSearchQuery('fromDate', value)
                         }}
@@ -183,7 +169,7 @@ const CustomerTradeDetails = (props: Props) => {
                         size="sm"
                         placeholder="Select to date"
                         className="bg-white"
-                        defaultValue={filters.toDate}
+                        defaultValue={toDate || ''}
                         onChange={value => {
                            debouncedUpdateSearchQuery('toDate', value)
                         }}
@@ -194,8 +180,8 @@ const CustomerTradeDetails = (props: Props) => {
                   <div className="flex items-end">
                      <div className="bg-white px-3 py-2 rounded border">
                         <span className="text-sm text-gray-600">
-                           {/* Showing {filteredData.length} of {CUSTOMER_TRADE_DETAILS_DATA.length} results */}
-                           30 of {CUSTOMER_TRADE_DETAILS_DATA.length} results
+                           {/* Showing {filteredData.length} of {CUSTOMER_TRADE_DETAILS_DATA.length} results */}3 of{' '}
+                           {CUSTOMER_TRADE_DETAILS_DATA.length} results
                         </span>
                      </div>
                   </div>

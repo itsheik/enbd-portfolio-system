@@ -8,18 +8,21 @@ import { persistReducer, persistStore } from 'redux-persist'
 import storage from './storage'
 
 import authReducer from '~/store/features/auth/authSlice'
+import transactionReducer from '~/store/features/transactions'
 import { apiSlice } from '~/store/services/apiSlice'
 
 const rootReducer = combineReducers({
    [apiSlice.reducerPath]: apiSlice.reducer,
    user: authReducer,
+   transaction: transactionReducer,
 })
 
 const persistConfig = {
    key: 'root',
    storage,
    version: 1,
-   blacklist: ['auction'],
+   blacklist: [''],
+   whitelist: [''],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

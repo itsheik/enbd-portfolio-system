@@ -1,22 +1,14 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-import { type LoginData } from '@/src/interface/auth'
+export type TransactionState = object
 
-export type IUser = LoginData
-
-// export interface TransactionState {
-
-// }
-
-const initialState: any =
-   // TransactionState
-   {}
+const initialState: TransactionState = {}
 
 const transactionSlice = createSlice({
-   name: 'user',
+   name: 'transaction',
    initialState,
    reducers: {
-      setTransactionSlice: (state, action: PayloadAction<Partial<any>>) => {
+      setTransactionSlice: (state, action: PayloadAction<Partial<TransactionState>>) => {
          return {
             ...state,
             ...action.payload,
