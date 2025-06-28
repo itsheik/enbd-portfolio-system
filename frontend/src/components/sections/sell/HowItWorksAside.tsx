@@ -1,8 +1,11 @@
 import React from 'react'
-import { QuickLinksComponent } from '../../cards/QuickLinks'
-import { Heading, Paragraph } from '~/components/ui'
 import Image from 'next/image'
+
 import { Pouring, sellAuction } from '@/src/utils/images/main-page'
+
+import { QuickLinksComponent } from '../../cards/QuickLinks'
+
+import { Heading, Paragraph } from '~/components/ui'
 
 const HowItWorksAside = () => {
    return (

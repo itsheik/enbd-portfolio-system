@@ -1,6 +1,7 @@
 'use client'
 
 import { CONDITION_NOTES, wineNotes } from '@/src/constants/constants'
+
 import { Heading, Paragraph } from '../../ui'
 
 export const AuctionMethodDescription = () => {

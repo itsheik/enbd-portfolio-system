@@ -1,8 +1,10 @@
 import React from 'react'
-import { Heading, Paragraph } from '../../ui'
-import { NEWPORT_BEACH_STORAGE_FACILITY_DETAILS, SANTA_ANA_STORAGE_FACILITY_DETAILS } from '@/src/constants/constants'
 import Image from 'next/image'
+
+import { NEWPORT_BEACH_STORAGE_FACILITY_DETAILS, SANTA_ANA_STORAGE_FACILITY_DETAILS } from '@/src/constants/constants'
 import { NewportStorage, SantaAnaStorage } from '@/src/utils/images/main-page'
+
+import { Heading, Paragraph } from '../../ui'
 
 const WineStorage = () => {
    return (

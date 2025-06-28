@@ -18,10 +18,12 @@ function parseLooseDate(input: string): Date | null {
       let hour = parseInt(h)
       if (period === 'PM' && hour !== 12) hour += 12
       if (period === 'AM' && hour === 12) hour = 0
-      return `${hour.toString().padStart(2, '0')}:${m}`
+      
+return `${hour.toString().padStart(2, '0')}:${m}`
    })
    const date = new Date(fixed)
-   return isNaN(date.getTime()) ? null : date
+   
+return isNaN(date.getTime()) ? null : date
 }
 
 export const useTimeLeft = (endTimeString?: string): TimeUnit[] => {

@@ -43,7 +43,7 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, SerializedEr
       // const refreshToken = (api.getState() as RootState).user.token
 
       // CODE FOR HANDLING REFRESH TOKEN API
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+       
       // const refreshResult: any = await baseQuery(
       //    {
       //       url: '/auth/client/refresh',

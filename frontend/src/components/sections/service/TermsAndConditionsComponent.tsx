@@ -1,6 +1,8 @@
 import React from 'react'
-import { Heading, Paragraph } from '../../ui'
+
 import { TERMS_AND_CONDITIONS } from '@/src/constants/constants'
+
+import { Heading, Paragraph } from '../../ui'
 
 const TermsAndConditionsComponent = () => {
    return (

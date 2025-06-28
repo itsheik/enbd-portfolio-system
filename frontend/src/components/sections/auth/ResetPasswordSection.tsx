@@ -1,10 +1,12 @@
 'use client'
 import React from 'react'
-import { Heading, MButton, MTextInput, Paragraph } from '../../ui'
-import { AuthBanner } from './AuthBanner'
+
 import SimpleCheckbox from '../../form/CheckBox'
-import AuthLayout from './Layout'
+import { Heading, MButton, MTextInput, Paragraph } from '../../ui'
 import BackButton from '../../ui/BackButton'
+
+import { AuthBanner } from './AuthBanner'
+import AuthLayout from './Layout'
 
 const ResetPasswordSection = () => {
    return (

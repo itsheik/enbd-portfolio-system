@@ -1,14 +1,17 @@
 'use client'
+import React from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React from 'react'
-import { Heading, Paragraph } from '../../ui'
-import { Back } from '@/src/utils/images/main-page'
+
 import { RETAIL_TERMS_AND_CONDITIONS } from '@/src/constants/constants'
+import { Back } from '@/src/utils/images/main-page'
+
+import { Heading, Paragraph } from '../../ui'
 
 const RetailTermsAndConditions = () => {
    const router = useRouter()
-   return (
+   
+return (
       <section className="flex flex-col gap-6">
          <button className="flex gap-3 items-center cursor-pointer" onClick={() => router.back()}>
             <Image src={Back} alt="Bottle Shake" className="mb-0.5" />
