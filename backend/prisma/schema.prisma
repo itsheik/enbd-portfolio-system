@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // Change if using MySQL or SQLite
+  url      = env("DATABASE_URL")
+}
+
+model UserDetail {
+  id           Int       @id @default(autoincrement())
+  firstName    String?
+  lastName     String?
+  emailAddress String?
+  createdOn    DateTime?
+  createdBy    String?
+  modifiedOn   DateTime?
+  modifiedBy   String?
+
+  loginDetails UserLoginDetail[]
+
+  @@map("USER_DETAIL")
+}
+
+model UserLoginDetail {
+  id           Int       @id @default(autoincrement())
+  userDetailId Int
+  firstName    String?
+  lastName     String?
+  emailAddress String?
+  userStatus   String?
+  createdOn    DateTime?
+  createdBy    String?
+  modifiedOn   DateTime?
+  modifiedBy   String?
+
+  userDetail     UserDetail       @relation(fields: [userDetailId], references: [id])
+  orders         OrderDetail[]    @relation("CreatedOrders")
+  createdAccount AccountDetail[]  @relation("AccountCreatedBy")
+  accounts       AccountDetail[]  @relation("AccountUser")
+  auditLogins    AuditUserLogin[]
+  auditActions   AuditAction[]
+
+  @@map("USER_LOGIN_DETAIL")
+}
+
+model OrderDetail {
+  id               Int       @id @default(autoincrement())
+  securityDetailId Int
+  orderRefNo       String?
+  orderStatus      String?
+  transactionType  String
+  orderValue       Int
+  createdOn        DateTime?
+  createdById      Int
+
+  securityDetail SecurityDetail  @relation(fields: [securityDetailId], references: [id])
+  createdBy      UserLoginDetail @relation("CreatedOrders", fields: [createdById], references: [id])
+  accounts       AccountDetail[]
+
+  @@map("ORDER_DETAIL")
+}
+
+model AccountDetail {
+  id                Int       @id @default(autoincrement())
+  userLoginDetailId Int
+  credit            Int?
+  debit             Int?
+  runningBalance    Int       @default(10000)
+  orderDetailId     Int
+  createdOn         DateTime?
+  createdById       Int
+
+  userLoginDetail UserLoginDetail @relation("AccountUser", fields: [userLoginDetailId], references: [id])
+  orderDetail     OrderDetail     @relation(fields: [orderDetailId], references: [id])
+  createdBy       UserLoginDetail @relation("AccountCreatedBy", fields: [createdById], references: [id])
+
+  @@map("ACCOUNT_DETAIL")
+}
+
+model SecurityDetail {
+  id           Int  @id @default(autoincrement())
+  securityName Int
+  value        Int?
+
+  orders OrderDetail[]
+
+  @@map("SECURITY_DETAIL")
+}
+
+model AuditUserLogin {
+  id                Int       @id @default(autoincrement())
+  userLoginDetailId Int
+  sessionId         String?
+  loginStatus       String?
+  loginDateTime     DateTime?
+  logoutDateTime    DateTime?
+
+  userLoginDetail UserLoginDetail @relation(fields: [userLoginDetailId], references: [id])
+
+  @@map("AUDIT_USER_LOGIN")
+}
+
+model AuditAction {
+  id                Int       @id @default(autoincrement())
+  userLoginDetailId Int
+  userAction        String?
+  startDateTime     DateTime?
+  endDateTime       DateTime?
+
+  userLoginDetail UserLoginDetail @relation(fields: [userLoginDetailId], references: [id])
+
+  @@map("AUDIT_ACTION")
+}

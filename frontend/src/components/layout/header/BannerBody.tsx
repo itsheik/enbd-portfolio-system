@@ -63,7 +63,12 @@ const BannerBody = (props: Props) => {
 
             <div className="lg:flex-row flex-col flex items-center justify-center">
                <div className="lg:w-2/3 w-full">
-                  ENBD <br /> <span className="text-secondary">Customer Dashboard</span>
+                  Customer Summary <br />{' '}
+                  <span className="text-secondary">
+                     <span className="text-secondary">
+                        <span className="text-secondary">Balance: $100,000</span>
+                     </span>
+                  </span>
                </div>
 
                <div className="relative lg:w-1/3 flex items-center justify-center md:w-[410px] md:h-[490px] w-[310px] h-[390px]">
@@ -77,7 +82,7 @@ const BannerBody = (props: Props) => {
                               md:w-[410px] md:h-[490px] w-[310px] h-[390px]
                               "
                            /> */}
-                  <div className="absolute bg-secondary w-full md:h-[370px] h-[310px] md:max-w-[380px] max-w-[320px] -z-10 rounded-full" />
+                  {/* <div className="absolute bg-secondary w-full md:h-[370px] h-[310px] md:max-w-[380px] max-w-[320px] -z-10 rounded-full" /> */}
                </div>
             </div>
          </div>

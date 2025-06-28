@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "9f70d6fe-e268-4507-9ea2-3a0a89b4dd05",
+		"name": "Basic Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25175792"
+	},
+	"item": [
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"holderName\": \"Mohammad2\",\n    \"currency\": \"USD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Topup Account",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": \"12.12\",\n    \"currency\": \"USD\",\n    \"operationId\": \"some id\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/:id/topup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						":id",
+						"topup"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "cm8gav0dn0001ogk3q1lhgrus"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Charge Account",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": \"12.12\",\n    \"currency\": \"USD\",\n    \"operationId\": \"some id\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/accounts/:id/topup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"accounts",
+						":id",
+						"topup"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "cm8gav0dn0001ogk3q1lhgrus"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

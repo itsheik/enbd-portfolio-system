@@ -28,7 +28,9 @@ const LoginSection = () => {
       },
       validationSchema: loginValidationSchema,
       onSubmit: values => {
-         signIn({ username: values.username, password: values.password })
+         window.location.href = '/'
+
+         // signIn({ username: values.username, password: values.password })
       },
    })
 

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Heading, Paragraph } from '~/components/ui'
 
 const HowItWorksSection = () => {

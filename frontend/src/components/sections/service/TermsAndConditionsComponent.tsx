@@ -9,7 +9,9 @@ const TermsAndConditionsComponent = () => {
       <section>
          {' '}
          <Heading order={2} className="text-red-secondary font-normal text-3xl">
-            Spectrum Wine Auctions The May 2025 Auction: Part 4{' '}
+            Spectrum Wine Auctions
+            <br />
+            The May 2025 Auction: Part 4{' '}
          </Heading>
          <Paragraph className="font-medium md:font-medium text-base mt-1 text-b-white-secondary">
             YOU MUST AGREE TO THE TERMS AND CONDITIONS BEFORE BIDDING IN THIS AUCTION

@@ -17,3 +17,11 @@ export interface ISelectLabel {
    label: string
    value: string
 }
+
+export interface ApiRequestParams {
+   orderRefNo?: string
+   securityName?: string
+   transactionType?: string
+   fromDate?: string
+   toDate?: string
+}

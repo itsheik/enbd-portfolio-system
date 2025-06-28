@@ -216,14 +216,14 @@ export const formatDateToDateTime = (isoString: string): string => {
 }
 
 export const getAllFiltersData = () => {
-   const transactionId = useQueryParam('orderId'),
+   const orderRefNo = useQueryParam('orderRefNo'),
       securityName = useQueryParam('securityName'),
       transactionType = useQueryParam('transactionType'),
       fromDate = useQueryParam('fromDate'),
       toDate = useQueryParam('toDate')
 
    return {
-      transactionId,
+      orderRefNo,
       securityName,
       transactionType,
       fromDate,

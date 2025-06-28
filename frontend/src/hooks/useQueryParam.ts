@@ -11,3 +11,4 @@ export function useQueryParam(key: string): string | null {
 
    return value
 }
+

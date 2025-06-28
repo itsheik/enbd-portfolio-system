@@ -8,18 +8,21 @@ import { persistReducer, persistStore } from 'redux-persist'
 import storage from './storage'
 
 import authReducer from '~/store/features/auth/authSlice'
+import transactionReducer from '~/store/features/transactions'
 import { apiSlice } from '~/store/services/apiSlice'
 
 const rootReducer = combineReducers({
    [apiSlice.reducerPath]: apiSlice.reducer,
    user: authReducer,
+   transactions: transactionReducer,
 })
 
 const persistConfig = {
    key: 'root',
    storage,
    version: 1,
-   blacklist: ['auction'],
+   blacklist: [''],
+   whitelist: [''],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -33,6 +36,5 @@ export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 export const persistor = persistStore(store)
 
-// Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
