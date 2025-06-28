@@ -69,6 +69,11 @@ const CustomerTradeDetails = (props: Props) => {
          fromDate: '',
          toDate: '',
       })
+      debouncedUpdateSearchQuery('orderRefNo', '')
+      debouncedUpdateSearchQuery('securityName', '')
+      debouncedUpdateSearchQuery('transactionType', '')
+      debouncedUpdateSearchQuery('fromDate', '')
+      debouncedUpdateSearchQuery('toDate', '')
    }
 
    const hasActiveFilters = Object.values(filters).some(value => value !== '')
@@ -153,7 +158,9 @@ const CustomerTradeDetails = (props: Props) => {
                         className="bg-white"
                         leftSection={<SearchSvg className="text-red-secondary" />}
                         defaultValue={filters.securityName}
-                        onChange={value => handleFilterChange('securityName', value)}
+                        onChange={value => {
+                           debouncedUpdateSearchQuery('securityName', value)
+                        }}
                      />
                   </div>
 
@@ -164,7 +171,9 @@ const CustomerTradeDetails = (props: Props) => {
                         name="transactionType"
                         options={transactionTypes}
                         value={filters.transactionType}
-                        onChange={value => handleFilterChange('transactionType', value)}
+                        onChange={value => {
+                           debouncedUpdateSearchQuery('transactionType', value)
+                        }}
                      />
                   </div>
 
@@ -176,7 +185,9 @@ const CustomerTradeDetails = (props: Props) => {
                         placeholder="Select from date"
                         className="bg-white"
                         defaultValue={filters.fromDate}
-                        onChange={value => handleFilterChange('fromDate', value)}
+                        onChange={value => {
+                           debouncedUpdateSearchQuery('fromDate', value)
+                        }}
                      />
                   </div>
 
@@ -188,7 +199,9 @@ const CustomerTradeDetails = (props: Props) => {
                         placeholder="Select to date"
                         className="bg-white"
                         defaultValue={filters.toDate}
-                        onChange={value => handleFilterChange('toDate', value)}
+                        onChange={value => {
+                           debouncedUpdateSearchQuery('toDate', value)
+                        }}
                      />
                   </div>
 
@@ -197,6 +210,7 @@ const CustomerTradeDetails = (props: Props) => {
                      <div className="bg-white px-3 py-2 rounded border">
                         <span className="text-sm text-gray-600">
                            {/* Showing {filteredData.length} of {CUSTOMER_TRADE_DETAILS_DATA.length} results */}
+                           30 of {CUSTOMER_TRADE_DETAILS_DATA.length} results
                         </span>
                      </div>
                   </div>
