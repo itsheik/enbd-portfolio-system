@@ -78,8 +78,6 @@ const CustomerTradeDetails = (props: Props) => {
       }
    }, [orderRefNo, securityName, transactionType, fromDate, toDate])
 
-   console.log('filteredData', filteredData)
-
    const columns = [
       {
          key: 'orderRefNo' as const,
