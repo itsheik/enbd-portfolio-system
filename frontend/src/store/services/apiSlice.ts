@@ -81,22 +81,12 @@ export const apiSlice = createApi({
    baseQuery: baseQueryWithReauth,
    endpoints: builder => ({}),
    tagTypes: [
-      // Retail Section
-      'RetailWineListing',
-      'addRetailItemToCart',
-      'paymentSummary',
-
-      //auction section
-      'AuctionLotListing',
-      'loadWineRegionsByAuctionsId',
+      // Transaction History
+      'TransactionHistory',
 
       // Auth Section
       'AuthLogin',
       'AuthSignup',
-
-      // Customer Info
-      'customerInfo',
-      'customerPaymentMethods',
-      'shippingRates',
+ 
    ],
 })
