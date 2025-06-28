@@ -1,10 +1,40 @@
-// src/lib/redis.ts
-import Redis from "ioredis";
+// src/lib/mockRedis.ts
 
-const redis = new Redis({
-  host: process.env.REDIS_HOST,
-  port: process.env.REDIS_PORT,
-});
+const redisStore = new Map<string, { value: string; expireAt?: number }>();
+
+const redis = {
+  set: (
+    key: string,
+    value: string,
+    ex?: string,
+    ttlInSeconds?: number
+  ): Promise<"OK"> => {
+    if (ex === "EX" && ttlInSeconds) {
+      const expireAt = Date.now() + ttlInSeconds * 1000;
+      redisStore.set(key, { value, expireAt });
+    } else {
+      redisStore.set(key, { value });
+    }
+    return Promise.resolve("OK");
+  },
+
+  get: (key: string): Promise<string | null> => {
+    const entry = redisStore.get(key);
+    if (!entry) return Promise.resolve(null);
+
+    if (entry.expireAt && Date.now() > entry.expireAt) {
+      redisStore.delete(key);
+      return Promise.resolve(null);
+    }
+
+    return Promise.resolve(entry.value);
+  },
+
+  del: (key: string): Promise<number> => {
+    const existed = redisStore.delete(key);
+    return Promise.resolve(existed ? 1 : 0);
+  },
+};
 
 // Set a value with optional expiration
 async function setValue<T>(
