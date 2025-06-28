@@ -1,9 +1,11 @@
 'use client'
 import React from 'react'
-import GlobalHeading from '~/components/ui/Headings/GlobalHeading'
-import { MButton, Paragraph } from '~/components/ui'
 import { useFormik } from 'formik'
+
 import { searchSettingsValidationSchema } from '@/src/lib/utils/validations/dashboard'
+
+import { MButton, Paragraph } from '~/components/ui'
+import GlobalHeading from '~/components/ui/Headings/GlobalHeading'
 
 type FormValues = {
    locations: string[] // tell TypeScript it holds strings
@@ -23,7 +25,8 @@ const SearchSettigs = () => {
       { label: 'Los Angeles', value: 'la' },
       { label: 'San Diego', value: 'sd' },
    ]
-   return (
+   
+return (
       <div className="flex flex-col gap-4">
          {' '}
          <GlobalHeading title="Search Setting" />

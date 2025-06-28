@@ -1,7 +1,9 @@
 import React from 'react'
-import { Heading } from '../../ui'
-import ServicesCard from '../../cards/ServicesCard'
+
 import { OUR_SERVICES } from '@/src/constants/constants'
+
+import ServicesCard from '../../cards/ServicesCard'
+import { Heading } from '../../ui'
 
 const OurServices = () => {
    return (

@@ -1,5 +1,6 @@
-import { Heading, Paragraph } from '@/src/components/ui'
 import React from 'react'
+
+import { Heading, Paragraph } from '@/src/components/ui'
 
 const ShippingFAQ = () => {
    return (

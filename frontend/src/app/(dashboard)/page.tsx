@@ -1,6 +1,6 @@
 'use client'
 
-import CustomerTradeDetails from '~/components/sections/home/CustomerTradeDetails'
+import CustomerTradeDetails from '@/src/components/sections/home/CustomerTradeDetails'
 
 function HomePage() {
    return (

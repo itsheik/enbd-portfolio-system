@@ -1,6 +1,6 @@
+export * from './mantine-accordion'
 export * from './mantine-action-icon'
 export * from './mantine-anchor'
 export * from './mantine-button'
 export * from './mantine-carousel'
 export * from './mantine-input'
-export * from './mantine-accordion'

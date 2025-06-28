@@ -1,5 +1,7 @@
+import type React from 'react'
+
 import { cn } from '@/src/lib'
-import React from 'react'
+
 import { LoaderBottleSvg } from './icons/svg-icons'
 
 interface LoaderProps {

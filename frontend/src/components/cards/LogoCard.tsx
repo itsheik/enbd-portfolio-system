@@ -1,6 +1,6 @@
 'use client'
-import Image, { StaticImageData } from 'next/image'
 import { type FC } from 'react'
+import Image, { type StaticImageData } from 'next/image'
 
 type LogoCardProps = {
    image: string | StaticImageData
